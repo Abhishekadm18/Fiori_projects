@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+    <Dialog id="helloDialog" title="Add Data">
+        <content>
+            <f:SimpleForm id="SimpleFormChange354"
+			    editable="true"
+			    layout="ResponsiveGridLayout"
+			    labelSpanXL="3"
+			    labelSpanL="3"
+			    labelSpanM="3"
+			    labelSpanS="12"
+			    adjustLabelSpan="false"
+			    emptySpanXL="4"
+			    emptySpanL="4"
+			    emptySpanM="4"
+			    emptySpanS="0"
+			    columnsXL="1"
+			    columnsL="1"
+			    columnsM="1"
+			    singleContainerFullSize="false" >
+			<f:content> 
+				<Label id="_IDGenLabel22" text="ID" width="100%"/>
+				<Input id="ID"  />
+				<Label id="_IDGenLabel2" text="Name" width="100%"/>
+				<Input id="name"  />
+                <Label id="_IDGenLabel3" text="Email ID" width="100%"/>
+				<Input id="email"  />
+				<Label id="_IDGenLabel32" text="Manager" width="100%"/>
+				<Input id="manager"  />
+                
+			</f:content>
+		</f:SimpleForm>
+
+        </content>
+        
+	   <Button id="save2" text="Save"  press="savedata" class="sapUiSmallMarginEnd"/>
+	   <Button id="cancel" type="Reject" text="Cancel" press="onCancel" ariaDescribedBy="rejectButtonDescription genericButtonDescription" class="sapUiSmallMarginEnd">
+            <layoutData>
+                <FlexItemData id="_IDGendFlexItemData2" />
+            </layoutData>
+        </Button>
+	   
+        
+    </Dialog>
+
+
+
+
+	
+
+</core:FragmentDefinition>

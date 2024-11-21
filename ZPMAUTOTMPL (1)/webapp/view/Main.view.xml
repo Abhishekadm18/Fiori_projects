@@ -1,0 +1,5 @@
+<mvc:View controllerName="com.ZpmAutoTmpl.ZPMAutoTmpl.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="idMain">
+	
+	</App>
+</mvc:View>

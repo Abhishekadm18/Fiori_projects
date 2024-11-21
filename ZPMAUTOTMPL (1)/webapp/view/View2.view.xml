@@ -1,0 +1,23 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
+	controllerName="com.ZpmAutoTmpl.ZPMAutoTmpl.controller.View2">
+	<Page title="Output Preview and Excel Download">
+		<content>
+			<smartFilterBar:SmartFilterBar id="smartFilterBar" initialized="initializedSmartFilterbar" entitySet="StoredOutputDataSet"
+				useToolbar="false" showFilterConfiguration="false"></smartFilterBar:SmartFilterBar>
+			<smartTable:SmartTable id="ProductsSmartTable" entitySet="StoredOutputDataSet"   beforeRebindTable="onBeforeRebindTable"
+				initiallyVisibleFields="Aa0uniqueid,Aa1plant,Aa2kit,Aa3counter,Aa4genericEquip,Aa5flocEquip,Aa6required,Aa7l1,Aa8l2,Aa9l3,Ab1l4,Ab2l5,Ab3l6,Ab4l7,Ab5l8,Ab6l9,Ab7l10,Ab8l11,Ab9l12,Ac1comments,Ac2pId,Ac4functionalLocEquipment,Ac5description,Ac6manufacturer,Ac7modelNum,Ac8serialNum,Ac9partNum,Ad1mawp,Ad2setPressurePsi,Ad3sizeBlank,Ad4range,Ad5dpRange,Ad6spRange,Ad6capacity,Ad7superiorFlocEquip,Ad8parentEquip,Ad9parentFloc,Ae1class,Ae2userStatus,Ae3costCenter,Ae4sortField,Ae5inventoryUwiNum,Ae6curDate,Ae7locationArea,Ae8mainWorkCenter,Ae9positionNumber,Af1insOfEquipAllo,Af2catalogProfile,Aa0uniqueid.Af4changedby"
+				smartFilterId="smartFilterBar" header="ExportOutputData" showRowCount="true" useExportToExcel="true" useVariantManagement="false"
+				persistencyKey="SmartTableAnalytical_Explored" enableAutoColumnWidth="false" useTablePersonalisation="true"
+				class="sapUiResponsiveContentPadding" enableAutoBinding="true"></smartTable:SmartTable>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://close-command-field" text="Back" tooltip="Back" type="Emphasized" press="goTo1Previous"/>
+					<ToolbarSpacer/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,63 @@
+<mvc:View
+  controllerName="fiorivizdemo2.controller.View1"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:layout="sap.ui.layout"
+  xmlns:viz="sap.viz.ui5.controls"
+  xmlns:viz.data="sap.viz.ui5.data"
+  xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+
+  <Page title="{i18n>title}" id="Sales">
+    <content>
+      <layout:FixFlex id="chartFixFlex" minFlexSize="auto">
+        <layout:flexContent>
+          <viz:VizFrame
+            id="idVizFrame"
+            uiConfig="{applicationSet:'fiori'}"
+            height="100%"
+            width="100%"
+            vizType="bar"
+            vizProperties="{
+                              title: {
+                                  text: 'Product Stock Levels'
+                              },
+                              plotArea: {
+                                dataLabel: {
+                                    visible: true
+                                }
+                              }
+                            }">
+            <viz:dataset>
+              <viz.data:FlattenedDataset id="_IDGenFlattenedDataset1" data="{/Products}">
+                <viz.data:dimensions>
+                  <viz.data:DimensionDefinition id="_IDGenDimensionDefinition"
+                    name="ProductName"
+                    value="{ProductName}" />
+                </viz.data:dimensions>
+                <viz.data:measures>
+                  <viz.data:MeasureDefinition id="_IDGenMeasureDefinition"
+                    name="UnitsInStock"
+                    value="{UnitsInStock}" />
+                </viz.data:measures>
+              </viz.data:FlattenedDataset>
+            </viz:dataset>
+            <viz:feeds>
+              <viz.feeds:FeedItem
+                id="valueAxisFeed"
+                uid="valueAxis"
+                type="Measure"
+                values="UnitsInStock" />
+              <viz.feeds:FeedItem
+                id="categoryAxisFeed"
+                uid="categoryAxis"
+                type="Dimension"
+                values="ProductName" />
+            </viz:feeds>
+          </viz:VizFrame>
+        </layout:flexContent>
+      </layout:FixFlex>
+      <viz:Popover id="idPopOver"></viz:Popover>
+    </content>
+  </Page>
+</mvc:View>

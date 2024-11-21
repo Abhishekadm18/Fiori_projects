@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog>
+		<ScrollContainer height='30rem' vertical='true'>
+			<Table id="idTab" items="{/KitFlocSet}" growing="true" selectionChange="onChange" mode="MultiSelect" sticky="ColumnHeaders,HeaderToolbar">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text=" Kit Structure Details" level="H2"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="KIT Position"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="KITID"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Funclocequip"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Description"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Superiorflocequip"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Where Used"/>
+					</Column>
+					<!--	<Column minScreenWidth="Tablet" demandPopin="true">-->
+					<!--	<Text text="Counter"/>-->
+					<!--</Column>-->
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text id="idKitPos" text="{Kitposition}"/>
+							<Text id="idKitId" text="{Kittype}"/>
+							<Text id="idFlocequip" text="{Funclocequip}"/>
+							<Text id="idDesc" text="{Description}"/>
+							<Text id="idSupFlocequip" text="{Superiorflocequip}"/>
+							<Text id="idPlant" text="{Plant}"/>
+							<!--<Text id="idCounter" text="{Counter}"/>-->
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</ScrollContainer>
+		<beginButton>
+			<Button text="Save" press="onContinue"></Button>
+		</beginButton>
+		<endButton>
+			<Button text="Back" press="onClose"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

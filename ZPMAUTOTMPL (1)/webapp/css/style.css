@@ -1,0 +1,17 @@
+/* Enter your custom styles here */
+.sapMMessageToastSuccess {
+    color: #ffffff  ;
+    background-color: #0a6ed1 ;
+    border: 1px solid #32cd32  ;
+    border-left: 10px solid #32cd32  ;
+}
+.sapMMessageToastDanger {
+    color: #ffffff  ;
+    background-color: #0a6ed1 ;
+    border: 1px solid #D8000C ;
+    border-left: 7px solid #D8000C ;
+}
+.disabledRow {
+	opacity:0.5;
+	pointer-events:none;
+}

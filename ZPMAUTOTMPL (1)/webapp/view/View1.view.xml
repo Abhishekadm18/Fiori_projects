@@ -1,0 +1,365 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.ZpmAutoTmpl.ZPMAutoTmpl.controller.View1">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="PM Auto Structure Template" titleLevel="H4" backgroundDesign="Solid">
+					
+				
+					<content>
+						<IconTabBar id="idIconTabBar" expandable="false" headerBackgroundDesign="Transparent" select="handleIconTabBarSelect">
+							<items>
+								<!--ZPM_PAD_DET_STR-->
+								<IconTabFilter id="iconTabFilterPad" icon="sap-icon://folder" tooltip="Enter Pad Details" key="KEY1" text="PAD DATA">
+								
+									<Table id="idTabPad" items="{/jPadDetailsSet}">
+										<headerToolbar>
+											<OverflowToolbar id="otbSubheader0">
+												<Title text="Enter PAD Details:" level="H2"/>
+												
+												<ToolbarSpacer/>
+													<Button  id="idclear" text="Refresh" press="onRefresh"></Button>
+											</OverflowToolbar>
+										</headerToolbar>
+										<columns>
+											<Column>
+												<Text text="Pad Code"/>
+											</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="Pad Description"/>
+											</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="Cost Center"/>
+											</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true">
+													<Text text="System ID #/UWI(Inventory No) "/>
+												</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="Generic Equipment ID"/>
+											</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="Functional Location Equipment"/>
+											</Column>
+											
+										</columns>
+										<items>
+											<ColumnListItem>
+												<cells>
+													<Input id="idPadCode" value="{PadCode}" placeholder="Ex. HAY-PAD1, EFO-PAD1 ..." maxLength="40"/>
+													<Input id="idPadDesc" value="{PadDesc}" placeholder="Ex. ALLB CAT 15 2/GILCREASE 22H #2 ..." maxLength="40"/>
+													<Input id="idCostCtr" value="{CostCenter}" placeholder="Ex. 2000031446" maxLength="10" liveChange="onLiveChange"/>
+													<Input id="idPadSysid" value="{SysId}" placeholder="Ex. 20176900" maxLength="10"/>
+													<Input id="idGenEq" value="{GenEquip}" placeholder="Ex. Gilcrease" maxLength="20"/>
+													<Input id="idWellId" value="{WellId}" placeholder="Ex. 401001100" maxLength="10" liveChange="onLiveChange" valueState="Success"/>
+													
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</IconTabFilter>
+								<IconTabSeparator icon="sap-icon://process"/>
+								<!--ZPM_WELL_DET_STR-->
+								<IconTabFilter id="iconTabWell" icon="sap-icon://add-activity" tooltip="Enter Well Details" key="KEY2" text="WELL DATA">
+									<!--Enter 2nd Tble -->
+									<content>
+										<Table id="idTabWell" items="{/jWellDetailsSet}">
+											<headerToolbar>
+												<OverflowToolbar id="otbSubheader3">
+													<Title text="Enter WELL Details" level="H2"/>
+													<ToolbarSpacer/>
+													<Button id="idAddWell" icon="sap-icon://add" tooltip="Add Row" text="Row" type="Emphasized" press="onAddWell" visible="true"/>
+												<Button  id="idclear1" text="Refresh" press="onWellRefresh"></Button>
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<Column width="150px">
+													<Text text="Serial No"/>
+												</Column>
+												<Column width="200px">
+													<Text text="Functional Location Equipment"/>
+												</Column>
+												
+												<Column minScreenWidth="Tablet" demandPopin="true">
+													<Text text="Sort Field/Description"/>
+												</Column>
+												<Column width="220px">
+													<Text text="System ID #/UWI(Inventory No) "/>
+												</Column>
+												<Column width="200px">
+													<Text text="Well Cost Center"/>
+												</Column>
+												<Column width="60px">
+													<Text text="Delete"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Input id="idSlno" value="{SerialNo}" enabled="false" maxLength="40"/>
+														<Input id="idWellId2" value="{WellId}" enabled="false" maxLength="40"/>
+														
+														<Input id="idWellDesc" value="{Desc}" placeholder="Enter the Sort Field/Description" maxLength="30"/>
+														<Input id="idSysid" value="{SysId}" placeholder="Ex. 20176900" maxLength="10"/>
+														<Input id="idCostc2" value="{CostCenter}" placeholder="Ex. 2000038988" maxLength="10" liveChange="onLiveChange"/>
+														<Button icon="sap-icon://delete" tooltip="Delete" press="onDeleteWell" type="Reject"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</content>
+								</IconTabFilter>
+								<IconTabSeparator icon="sap-icon://process"/>
+								<!--ZPM_KIT_DET_STR-->
+								<IconTabFilter id="iconTabKit" icon="sap-icon://add-equipment" tooltip="Enter Kit Details" key="KEY3" text="KIT DATA">
+									<content>
+										<Table id="idTabKit" items="{readModel>/jKitDetailsSet}" mode="MultiSelect" sticky="ColumnHeaders" selectionChange="onSelectKit">
+											<headerToolbar>
+												<OverflowToolbar id="otbSubheader2">
+													<Title text="Enter KIT Details" level="H2"/>
+													
+													<ToolbarSpacer/>
+													<content>
+														<MessageStrip xmlns="sap.m" text="Please select all the KIT Type and Count at once." showCloseButton="true" busyIndicatorSize="Large" showIcon="true" type="Warning"/>
+													</content>
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<Column minScreenWidth="Tablet" demandPopin="true">
+													<Text text="KIT Position"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true">
+													<Text text="KIT ID"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true">
+													<Text text="KIT Description"/>
+												</Column>
+												<Column width="200px">
+													<Text text="Count of KIT (User Input)"/>
+												</Column>
+												<Column width="150px">
+													<Text text="Message"/>
+												</Column>
+												<Column width="100px">
+													<Text text="KIT Required"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem press="onItemSelected" type="Active">
+													<cells>
+														<Text id="idKitPos" text="{readModel>KitPos}"/>
+														<Text id="idKitId" text="{readModel>Kit}"/>
+														<!--<Link id="idkitId" text="{readModel>Kit}" press="hrefPress"></Link>-->
+														<Text id="idKitDesc" text="{readModel>KitDesc}"/>
+														<!--<Input id="idKitCnt" value="{readModel>Count}" type="Number" placeholder="{Count}" liveChange="onKitCnt" maxLength="2"/>-->
+														<Input id="idKitCnt" value="{readModel>Count}" liveChange="onKitCnt" maxLength="1" valueState="Success" tooltip="Enter the Count" autocomplete="false" placeholder="Enter the count" busyIndicatorSize="Large" textAlign="Center"/>
+														<Input id="idKitReq" value="{readModel>KitReq}" enabled="false"/>
+														<Switch id="idKitSta" state="{readModel>KitSta}" type="AcceptReject" customTextOn="Yes" customTextOff="No" enabled="false"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</content>
+								</IconTabFilter>
+								<IconTabSeparator icon="sap-icon://process"/>
+								<!--ZPM_KIT_DESC_STR-->
+								<IconTabFilter id="iconTabKitU" icon="sap-icon://add-product" tooltip="Enter Kit Details" key="KEY4" text="Tank PNID">
+									<content>
+										<Table id="idTabKitU" inset="false" items="{path:'tankModel>/',
+							
+        sorter: [{
+        path: 'Kitposition', 
+        descending: false
+    }, {
+        path: 'Set', 
+        descending: false
+    }] }" growing="true" growingThreshold="50">
+											<headerToolbar>
+												<OverflowToolbar id="otbSubheader4">
+													<Title text="Enter KIT Description" level="H2"/>
+														<Text id="idtext1" text=""></Text>
+													
+													<ToolbarSpacer/>
+													<MessageStrip text="Please confirm selected KIT Type and Count, before entring the required PNID." showCloseButton="true" busyIndicatorSize="Large"/>
+													<MessageStrip text="Navigating away from this screen will delete all entered descriptions." showCloseButton="true" busyIndicatorSize="Large" type="Warning"/>
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<!--<Column width="100px">-->
+												<!--	<Text text="Serial No"/>-->
+												<!--</Column>-->
+												<!--<Column width="150px">-->
+												<!--	<Text text="KIT TYPE"/>-->
+												<!--</Column>-->
+												<!--<Column width="300px">-->
+												<!--	<Text text="KIT ID"/>-->
+												<!--</Column>-->
+												<!--<Column width="150px">-->
+												<!--	<Text text="PNID Count"/>-->
+												<!--</Column>-->
+												<!--<Column width="100px">-->
+												<!--	<Text text="Status"/>-->
+												<!--</Column>-->
+												<!--<Column minScreenWidth="Tablet" demandPopin="true">-->
+												<!--	<Text text="Tank PNID Detail"/>-->
+												<!--</Column>-->
+													<Column width="100px">
+													<Text text="Kit Position"/>
+												</Column>
+													<Column width="100px">
+													<Text text="Kit Type"/>
+												</Column>
+												<Column width="100px">
+													<Text text="Functional Location Equipment"/>
+												</Column>
+												<Column width="100px">
+													<Text text="Counter"/>
+												</Column>
+													<Column width="100px">
+													<Text text="Plant"/>
+												</Column>
+												<Column width="100px">
+													<Text text="Description"/>
+												</Column>
+												<Column width="100px">
+													<Text text="Superiorflocequip"/>
+												</Column>
+													<Column width="100px">
+													<Text text="Set"/>
+												</Column>
+												<Column width="100px">
+													<Text text="Status"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true">
+													<Text text="Tank Identifier"/>
+												</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+													<Text text="Equipment PNID Detail"/>
+												</Column>
+												
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<!--<Text id="idKitslno" text="{ddModel>kitSlNo}"/>-->
+														<!--<Text id="idKittyp" text="{ddModel>kitTyp}"/>-->
+														<!--<Text id="idKitDD" text="{ddModel>kitTyp}-{ddModel&gt;kit}"/>-->
+														<!--<Text id="idPnidCnt" text="({ddModel>KitMaxCnt})-{ddModel>pnidCont}"/>-->
+														<!--<Switch id="idKitStat" state="{ddModel>KitStat}" type="AcceptReject" customTextOn="-" customTextOff="X" enabled="false"/>-->
+														<!--<Input id="idKitdescu" value="{ddModel>KitDescNew}" placeholder="Ex. T304284W1, T304284W2, T304284W3 ..." liveChange="onKitDesc" valueState="Success" maxLength="100"/>-->
+													<Text id="idKitPosition1" text="{tankModel>Kitposition}"/>
+														<Text id="idKittype1" text="{tankModel>Kittype}"/>
+														<Text id="idFunclocequip1" text="{tankModel>Funclocequip}"/>
+														<!--<Text id="idCounter" text="{ddModel1>Counter}"/>-->
+															<Text id="idCounter1" text="{tankModel>Counter}"/>
+														<Text id="idPlant1" text="{tankModel>Plant}"/>
+														<Text id="iddesc1" text="{tankModel>Description}"/>
+														<Text id="idSup1" text="{tankModel>Superiorflocequip}"/>
+                                                           <Text id="idSet1" text="{tankModel>Set}"/>
+														<Switch id="idKitStat" state="{tankModel>KitStat}" type="AcceptReject" customTextOn="-" customTextOff="X" enabled="false" change="toggleStatus"/>
+												
+														<Input id="idKitdescu" value="{tankModel>KitDescNew}" enabled="{tankModel>enabled}"  placeholder="Ex. T304284W1, T304284W2, T304284W3 ..." liveChange="onKitDesc" change="onTankChange" maxLength="100"/>
+														<Input id="idEquip1-1" value="{tankModel>EquipKitDescNew}" enabled="{tankModel>enabled1}"  liveChange="onKitEquiDesc" />
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</content>
+								</IconTabFilter>
+									<IconTabSeparator icon="sap-icon://process"/>
+								<!--Equipment PNID-->
+									<IconTabFilter id="iconTabKitEquip" icon="sap-icon://add-product" tooltip="Enter Kit Details" key="KEY5" text="Equipment PNID">
+									<content>
+									
+										<Table id="idTabKitEquip" inset="false" items="{path:'equipModel>/',  sorter: [{
+        path: 'Kitposition', 
+        descending: false
+    }, {
+        path: 'Set', 
+       descending: false
+    }
+    
+    ] }" alternateRowColors="true" growing="true" growingThreshold="50">
+											<headerToolbar>
+												<OverflowToolbar id="otbSubheader5">
+													<Title text="Enter KIT Description" level="H2"/>
+														<Text id="idtext" text=""></Text>
+													<ToolbarSpacer/>
+													<MessageStrip text="Please confirm selected KIT Type and Count, before entring the required PNID." showCloseButton="true" busyIndicatorSize="Large"/>
+													<MessageStrip text="Navigating away from this screen will delete all entered descriptions." showCloseButton="true" busyIndicatorSize="Large" type="Warning"/>
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+													<Column width="100px">
+													<Text text="Kit Position"/>
+												</Column>
+													<Column width="100px">
+													<Text text="Kit Type"/>
+												</Column>
+												<Column width="100px">
+													<Text text="Functional Location Equipment"/>
+												</Column>
+												<!--<Column width="150px">-->
+												<!--	<Text text="Counter"/>-->
+												<!--</Column>-->
+													<Column width="150px">
+													<Text text="Counter"/>
+												</Column>
+													<Column width="150px">
+													<Text text="Plant"/>
+												</Column>
+												<Column width="100px">
+													<Text text="Description"/>
+												</Column>
+												<Column width="150px">
+													<Text text="Superiorflocequip"/>
+												</Column>
+													<Column width="100px">
+													<Text text="Set"/>
+												</Column>
+												<!--	<Column width="100px">-->
+												<!--	<Text text="WellId"/>-->
+												<!--</Column>-->
+												<Column width="100px">
+													<Text text="Status"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true">
+													<Text text="Equipment PNID Detail"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem press="onItemSelect1" type="Active">
+													<cells>
+														<Text id="idKitPosition" text="{equipModel>Kitposition}"/>
+														<Text id="idKittype" text="{equipModel>Kittype}"/>
+														<Text id="idFunclocequip" text="{equipModel>Funclocequip}"/>
+														<Text id="idCounter" text="{equipModel>Counter}"/>
+														<Text id="idPlant" text="{equipModel>Plant}"/>
+														<Text id="iddesc" text="{equipModel>Description}"/>
+														<Text id="idSup" text="{equipModel>Superiorflocequip}"/>
+														  <Text id="idSet" text="{equipModel>Set}"/>
+														    <!--<Text id="idWell" text="{equipModel>WellId}"/>-->
+
+														<Switch id="idKitStat1" state="{equipModel>KitStat}" type="AcceptReject" customTextOn="-" customTextOff="X" enabled="false"/>
+												
+															<Input id="idKitdescu1" value="{equipModel>EquipKitDescNew}" enabled="{equipModel>enabled}"  placeholder="Ex. PSV-300 (A), TT-600, LCV-801, ESD-100 ..." liveChange="onKitDesc1"  maxLength="100" />
+														<!--<Input id="idKitdescu1" value="{equipModel>KitDescNew}" enabled="{equipModel>enabled}" placeholder="Ex. PSV-300 (A), TT-600, LCV-801, ESD-100 ..." liveChange="onKitDesc1"  maxLength="100"/>-->
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</content>
+								</IconTabFilter>
+							</items>
+						</IconTabBar>
+					</content>
+					<footer>
+						<Bar>
+							<contentRight>
+								<Button id="addButton" icon="sap-icon://excel-attachment" tooltip="Create Template" text="Create Template" type="Emphasized" press="onDeepCreate" visible="true"/>
+							</contentRight>
+						</Bar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

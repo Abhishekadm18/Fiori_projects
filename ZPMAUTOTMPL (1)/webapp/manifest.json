@@ -1,0 +1,128 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "com.ZpmAutoTmpl.ZPMAutoTmpl",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0",
+            "toolsId": "fcd546fe-fde7-4e1f-87b7-ae41e6d791c4"
+        },
+        "dataSources": {
+            "ZPM_AUTO_TMPL_SRV": {
+                "uri": "/sap/opu/odata/sap/ZPM_AUTO_TMPL_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "com.ZpmAutoTmpl.ZPMAutoTmpl.view.Main",
+            "type": "XML",
+            "async": true,
+            "id": "idMain"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.ZpmAutoTmpl.ZPMAutoTmpl.i18n.i18n"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZPM_AUTO_TMPL_SRV",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.ZpmAutoTmpl.ZPMAutoTmpl.view",
+                "controlId": "idMain",
+                "controlAggregation": "pages",
+                "clearControlAggregation": false,
+                "transition": "slide",
+                "clearAggregation": true
+            },
+            "routes": [
+                {
+                    "name": "View1Route",
+                    "pattern": "",
+                    "target": "Target1"
+                },
+                {
+                    "name": "View2Route",
+                    "pattern": "View2Pattern",
+                    "target": "Target2"
+                }
+            ],
+            "targets": {
+                "Target1": {
+                    "viewName": "View1",
+                    "viewLevel": 0
+                },
+                "Target2": {
+                    "viewName": "View2",
+                    "viewLevel": 2
+                }
+            }
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zpmautotmpl",
+        "_version": "1.1.0"
+    }
+}

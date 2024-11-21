@@ -1,0 +1,10 @@
+{
+    "folders": [
+        {
+            "path": "MyHANAApp"
+        }
+    ],
+    "settings": {
+        "SAP HANA Database Explorer.ShowXsAdvancedConnections": true
+    }
+}

@@ -1,0 +1,202 @@
+[
+    {
+        "Kid": "TiyJ",
+        "KitPos": "KitPo1",
+        "Kit": "Kit1",
+        "KitDesc": "KitDesc1",
+        "Count": "C1",
+        "KitReq": "1",
+        "KitSta": true,
+        "KitMsg": "KitMsg1"
+    },
+    {
+        "Kid": "UhFE",
+        "KitPos": "KitPo2",
+        "Kit": "Kit2",
+        "KitDesc": "KitDesc2",
+        "Count": "C2",
+        "KitReq": "2",
+        "KitSta": true,
+        "KitMsg": "KitMsg2"
+    },
+    {
+        "Kid": "Wemm",
+        "KitPos": "KitPo3",
+        "Kit": "Kit3",
+        "KitDesc": "KitDesc3",
+        "Count": "C3",
+        "KitReq": "3",
+        "KitSta": true,
+        "KitMsg": "KitMsg3"
+    },
+    {
+        "Kid": "DbGk",
+        "KitPos": "KitPo4",
+        "Kit": "Kit4",
+        "KitDesc": "KitDesc4",
+        "Count": "C4",
+        "KitReq": "4",
+        "KitSta": false,
+        "KitMsg": "KitMsg4"
+    },
+    {
+        "Kid": "QkGz",
+        "KitPos": "KitPo5",
+        "Kit": "Kit5",
+        "KitDesc": "KitDesc5",
+        "Count": "C5",
+        "KitReq": "5",
+        "KitSta": true,
+        "KitMsg": "KitMsg5"
+    },
+    {
+        "Kid": "IQHc",
+        "KitPos": "KitPo6",
+        "Kit": "Kit6",
+        "KitDesc": "KitDesc6",
+        "Count": "C6",
+        "KitReq": "6",
+        "KitSta": false,
+        "KitMsg": "KitMsg6"
+    },
+    {
+        "Kid": "naUn",
+        "KitPos": "KitPo7",
+        "Kit": "Kit7",
+        "KitDesc": "KitDesc7",
+        "Count": "C7",
+        "KitReq": "7",
+        "KitSta": false,
+        "KitMsg": "KitMsg7"
+    },
+    {
+        "Kid": "hFbw",
+        "KitPos": "KitPo8",
+        "Kit": "Kit8",
+        "KitDesc": "KitDesc8",
+        "Count": "C8",
+        "KitReq": "8",
+        "KitSta": true,
+        "KitMsg": "KitMsg8"
+    },
+    {
+        "Kid": "UcgO",
+        "KitPos": "KitPo9",
+        "Kit": "Kit9",
+        "KitDesc": "KitDesc9",
+        "Count": "C9",
+        "KitReq": "9",
+        "KitSta": false,
+        "KitMsg": "KitMsg9"
+    },
+    {
+        "Kid": "VJtp",
+        "KitPos": "KitP10",
+        "Kit": "Kit10",
+        "KitDesc": "KitDesc10",
+        "Count": "10",
+        "KitReq": "0",
+        "KitSta": true,
+        "KitMsg": "KitMsg10"
+    },
+    {
+        "Kid": "xxwm",
+        "KitPos": "KitP11",
+        "Kit": "Kit11",
+        "KitDesc": "KitDesc11",
+        "Count": "11",
+        "KitReq": "1",
+        "KitSta": true,
+        "KitMsg": "KitMsg11"
+    },
+    {
+        "Kid": "ndgH",
+        "KitPos": "KitP12",
+        "Kit": "Kit12",
+        "KitDesc": "KitDesc12",
+        "Count": "12",
+        "KitReq": "2",
+        "KitSta": false,
+        "KitMsg": "KitMsg12"
+    },
+    {
+        "Kid": "GVyF",
+        "KitPos": "KitP13",
+        "Kit": "Kit13",
+        "KitDesc": "KitDesc13",
+        "Count": "13",
+        "KitReq": "3",
+        "KitSta": false,
+        "KitMsg": "KitMsg13"
+    },
+    {
+        "Kid": "fxev",
+        "KitPos": "KitP14",
+        "Kit": "Kit14",
+        "KitDesc": "KitDesc14",
+        "Count": "14",
+        "KitReq": "4",
+        "KitSta": false,
+        "KitMsg": "KitMsg14"
+    },
+    {
+        "Kid": "vKBz",
+        "KitPos": "KitP15",
+        "Kit": "Kit15",
+        "KitDesc": "KitDesc15",
+        "Count": "15",
+        "KitReq": "5",
+        "KitSta": false,
+        "KitMsg": "KitMsg15"
+    },
+    {
+        "Kid": "fWZl",
+        "KitPos": "KitP16",
+        "Kit": "Kit16",
+        "KitDesc": "KitDesc16",
+        "Count": "16",
+        "KitReq": "6",
+        "KitSta": false,
+        "KitMsg": "KitMsg16"
+    },
+    {
+        "Kid": "aWCS",
+        "KitPos": "KitP17",
+        "Kit": "Kit17",
+        "KitDesc": "KitDesc17",
+        "Count": "17",
+        "KitReq": "7",
+        "KitSta": true,
+        "KitMsg": "KitMsg17"
+    },
+    {
+        "Kid": "LFOV",
+        "KitPos": "KitP18",
+        "Kit": "Kit18",
+        "KitDesc": "KitDesc18",
+        "Count": "18",
+        "KitReq": "8",
+        "KitSta": true,
+        "KitMsg": "KitMsg18"
+    },
+    {
+        "Kid": "MTxT",
+        "KitPos": "KitP19",
+        "Kit": "Kit19",
+        "KitDesc": "KitDesc19",
+        "Count": "19",
+        "KitReq": "9",
+        "KitSta": false,
+        "KitMsg": "KitMsg19"
+    },
+    {
+        "Kid": "ZUkp",
+        "KitPos": "KitP20",
+        "Kit": "Kit20",
+        "KitDesc": "KitDesc20",
+        "Count": "20",
+        "KitReq": "0",
+        "KitSta": true,
+        "KitMsg": "KitMsg20"
+    }
+]
